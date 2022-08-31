@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
+import type { ComponentProps } from "react";
 import { ChatbotType } from "../../../@types/chatbots";
-
-export interface ChatbotProps {
+export interface ChatbotProps extends ComponentProps<typeof motion.div> {
 	favorite?: boolean;
 	chatbot: ChatbotType;
 }

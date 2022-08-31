@@ -9,7 +9,7 @@ const ListPageOrganization = (props: Props) => {
 	const { view, setView } = useListPage();
 
 	return (
-		<div className="flex gap-3">
+		<div className="flex gap-1">
 			<button type="button" onClick={() => setView("grid")}>
 				<OrganizeGrid
 					className={classNames(
@@ -29,8 +29,5 @@ const ListPageOrganization = (props: Props) => {
 		</div>
 	);
 };
-
-// #D2DFE6
-// #6E7B91
 
 export default ListPageOrganization;

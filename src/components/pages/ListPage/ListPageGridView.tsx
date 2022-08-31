@@ -8,9 +8,14 @@ interface Props {
 const ListPageGridView = ({ chatbots }: Props) => {
 	return (
 		<div>
-			<div className="mt-4 flex gap-6">
+			<div className="mt-4 flex gap-6 overflow-x-scroll">
 				{chatbots.map((chatbot) => (
-					<Chatbot key={chatbot.name} variant="card" chatbot={chatbot} />
+					<Chatbot
+						key={chatbot.name}
+						className="flex-shrink-0"
+						variant="card"
+						chatbot={chatbot}
+					/>
 				))}
 			</div>
 			<hr className="my-10" />
