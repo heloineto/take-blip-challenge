@@ -5,9 +5,9 @@ import TopBar from "./components/layout/TopBar";
 
 const App = () => {
 	return (
-		<div className="min-h-screen flex flex-col">
+		<div className="flex min-h-screen flex-col bg-[#F5F8F9]">
 			<TopBar />
-			<div className="bg-[#F5F8F9] flex-grow">
+			<div className="mx-auto w-[1246px] flex-grow">
 				<Routes>
 					<Route path="/" element={<ListPage />}></Route>
 				</Routes>
