@@ -1,5 +1,5 @@
 import Button from "../elements/Button";
-import Card from "../elements/Card/Card";
+import Card from "../elements/Chatbot/Chatbot";
 import TextField from "../elements/TextField";
 
 interface Props {}
@@ -17,6 +17,12 @@ const ProfilePage = (props: Props) => {
 			</div>
 			<div className="mt-[32px]">
 				<h2 className="text-3xl font-bold leading-10 text-[#607B99]">Favorites</h2>
+				<div className="mt-4 flex gap-6">
+					<Card favorite />
+					<Card favorite />
+					<Card favorite />
+				</div>
+				<hr className="my-10" />
 				<div className="flex gap-6">
 					<Card />
 					<Card />
