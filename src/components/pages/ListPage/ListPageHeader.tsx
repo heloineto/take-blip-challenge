@@ -1,7 +1,6 @@
 import Button from "../../elements/Button";
 import TextField from "../../elements/TextField";
-import OrganizeBlocks from "../../icons/OrganizeBlocks";
-import OrganizeList from "../../icons/OrganizeList";
+import ListPageOrganization from "./ListPageOrganization";
 
 interface Props {}
 
@@ -13,18 +12,10 @@ const ListPageHeader = (props: Props) => {
 				<TextField className="h-full w-[312px]" name="search" label="Search" />
 				<Button>Order by name</Button>
 				<Button>Order by creation</Button>
-				<button>
-					<OrganizeBlocks />
-				</button>
-				<button>
-					<OrganizeList />
-				</button>
+				<ListPageOrganization />
 			</div>
 		</div>
 	);
 };
-
-// #D2DFE6
-// #6E7B91
 
 export default ListPageHeader;

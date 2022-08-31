@@ -1,21 +1,15 @@
-import Card from "../Card";
-import ChatbotStar from "./ChatbotStar";
+import ChatbotCard from "./ChatbotCard";
+import ChatbotRow from "./ChatbotRow";
+import { ChatbotProps } from "./types";
 
-interface Props {
-	favorite?: boolean;
+interface Props extends ChatbotProps {
+	variant: "card" | "row";
 }
 
-const Chatbot = ({ favorite = false }: Props) => {
-	return (
-		<Card className="relative">
-			<ChatbotStar className="absolute top-2 left-2" favorite={favorite} />
-			<div className="h-12 w-12 rounded-full bg-sky-500"></div>
-			<div className="text-center">
-				<h3 className="font-bold text-[#52636C]">Bot name</h3>
-				<p className="text-xs font-normal leading-5 text-[#738192]">Builder</p>
-			</div>
-		</Card>
-	);
+const Chatbot = ({ variant, ...restProps }: Props) => {
+	if (variant === "card") return <ChatbotCard {...restProps} />;
+
+	return <ChatbotRow {...restProps} />;
 };
 
 export default Chatbot;

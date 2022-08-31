@@ -4,7 +4,14 @@ interface Props extends ComponentProps<"svg"> {}
 
 const OrganizeList = (props: Props) => {
 	return (
-		<svg width={32} height={32} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<svg
+			width={32}
+			height={32}
+			viewBox="0 0 32 32"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			{...props}
+		>
 			<path
 				d="M24.6489 4.88H7.12442C5.86521 4.88 4.84442 5.9008 4.84442 7.16001V12.6845C4.84442 13.9437 5.86521 14.9644 7.12442 14.9644H24.6489C25.9081 14.9644 26.9289 13.9437 26.9289 12.6845V7.16001C26.9289 5.9008 25.9081 4.88 24.6489 4.88Z"
 				fill="currentColor"
