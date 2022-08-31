@@ -6,8 +6,9 @@ interface Props extends ComponentProps<"button"> {}
 const Button = ({ className, ...restProps }: Props) => {
 	return (
 		<button
+			type="button"
 			className={classNames(
-				"rounded-lg py-2 px-4 gap-2 inline-flex font-bold items-center border border-transparent text-white bg-sky-500 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500",
+				"inline-flex items-center gap-2 rounded-lg border border-transparent bg-sky-500 py-2 px-4 font-bold text-white hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2",
 				className
 			)}
 			{...restProps}

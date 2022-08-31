@@ -1,0 +1,12 @@
+{
+	"editor.codeActionsOnSave": [
+		"source.addMissingImports",
+		"source.fixAll",
+		"source.organizeImports"
+	],
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.foldingImportsByDefault": true,
+	"editor.formatOnSave": true,
+	"editor.tabSize": 4,
+	"eslint.packageManager": "npm"
+}

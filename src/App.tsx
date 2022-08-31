@@ -1,7 +1,6 @@
-import ListPage from "./components/pages/ListPage";
-
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import TopBar from "./components/layout/TopBar";
+import ListPage from "./components/pages/ListPage";
 
 const App = () => {
 	return (
