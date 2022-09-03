@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { forwardRef } from "react";
+import { Link } from "react-router-dom";
 import classNames from "../../../lib/utils/classNames";
+import snakeCase from "../../../lib/utils/toSnakeCase";
 import Card from "../Card";
 import ChatbotStar from "./ChatbotStar";
 import { ChatbotProps } from "./types";
@@ -32,16 +34,21 @@ const ChatbotCard = forwardRef<HTMLDivElement, ChatbotProps>(
 				ref={ref}
 				{...restProps}
 			>
-				<Card className="relative flex h-48 w-48 cursor-pointer flex-col items-center justify-center gap-4">
-					<ChatbotStar className="absolute top-2 left-2" favorite={favorite} />
-					<div className="h-12 w-12 rounded-full bg-sky-500"></div>
-					<div className="text-center">
-						<h3 className="font-bold text-[#52636C]">{name}</h3>
-						<p className="text-xs font-normal leading-5 text-[#738192]">
-							{type}
-						</p>
-					</div>
-				</Card>
+				<Link to={`/chatbot/${snakeCase(name)}`}>
+					<Card className="relative flex h-48 w-48 cursor-pointer flex-col items-center justify-center gap-4">
+						<ChatbotStar
+							className="absolute top-2 left-2"
+							favorite={favorite}
+						/>
+						<div className="h-12 w-12 rounded-full bg-sky-500"></div>
+						<div className="text-center">
+							<h3 className="font-bold text-[#52636C]">{name}</h3>
+							<p className="text-xs font-normal leading-5 text-[#738192]">
+								{type}
+							</p>
+						</div>
+					</Card>
+				</Link>
 			</motion.div>
 		);
 	}
