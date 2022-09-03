@@ -14,7 +14,7 @@ const ChatbotCard = ({
 
 	return (
 		<motion.div className={classNames("", className)} {...restProps}>
-			<Card className="relative flex h-48 w-48 flex-col items-center justify-center gap-4">
+			<Card className="relative flex h-48 w-48 cursor-pointer flex-col items-center justify-center gap-4">
 				<ChatbotStar className="absolute top-2 left-2" favorite={favorite} />
 				<div className="h-12 w-12 rounded-full bg-sky-500"></div>
 				<div className="text-center">

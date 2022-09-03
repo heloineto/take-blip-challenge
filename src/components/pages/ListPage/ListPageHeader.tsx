@@ -17,7 +17,7 @@ const sortByCreation = (chatbots: ChatbotType[]) => {
 
 const ListPageHeader = () => {
 	const [search, setSearch] = useState("");
-	const { setChatbots } = useListPage();
+	const { setChatbots, untouchedChatbots } = useListPage();
 
 	const onSortByName = () => {
 		setChatbots((chatbots) => {
@@ -36,9 +36,16 @@ const ListPageHeader = () => {
 	};
 
 	const onSearch = (e: ChangeEvent<HTMLInputElement>) => {
-		setSearch(e.target.value);
+		const searchTerm = e.target.value;
 
-		console.log(search);
+		setSearch(searchTerm);
+		setChatbots(() => {
+			if (untouchedChatbots === null) return null;
+
+			return untouchedChatbots.filter((chatbot) =>
+				chatbot.name.toLowerCase().includes(searchTerm.toLowerCase())
+			);
+		});
 	};
 
 	return (

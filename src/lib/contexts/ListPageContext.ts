@@ -7,6 +7,7 @@ type ListPageContextType = {
 	setView: Dispatch<SetStateAction<View>>;
 	chatbots: ChatbotType[] | null;
 	setChatbots: Dispatch<SetStateAction<ChatbotType[] | null>>;
+	untouchedChatbots: ChatbotType[] | null;
 };
 
 export const ListPageContext = createContext<ListPageContextType | undefined>(

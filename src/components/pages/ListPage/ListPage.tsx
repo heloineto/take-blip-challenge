@@ -14,16 +14,24 @@ interface Props {}
 const ProfilePage = (props: Props) => {
 	const [view, setView] = useState<View>("grid");
 	const [chatbots, setChatbots] = useState<ChatbotType[] | null>(null);
+	const [untouchedChatbots, setUntouchedChatbots] = useState<
+		ChatbotType[] | null
+	>(null);
 
 	useEffect(() => {
-		getChatbots().then((data) => setChatbots(data));
+		getChatbots().then((data) => {
+			setChatbots(data);
+			setUntouchedChatbots(data);
+		});
 	}, []);
 
-	const value = { view, setView, chatbots, setChatbots };
-
-	if (!chatbots) {
-		return <div>Loading...</div>;
-	}
+	const value = {
+		view,
+		setView,
+		chatbots,
+		setChatbots,
+		untouchedChatbots,
+	};
 
 	return (
 		<ListPageContext.Provider value={value}>
