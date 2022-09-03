@@ -1,14 +1,16 @@
-import { ChatbotType } from "../../../@types/chatbots";
+import { useListPage } from "../../../lib/contexts/ListPageContext";
 import Chatbot from "../../elements/Chatbot";
 
-interface Props {
-	chatbots: ChatbotType[];
-}
+const ListPageGridView = () => {
+	const { chatbots } = useListPage();
 
-const ListPageGridView = ({ chatbots }: Props) => {
+	if (!chatbots) {
+		return <div></div>;
+	}
+
 	return (
 		<div>
-			<div className="mt-4 flex gap-6 overflow-x-scroll">
+			<div className="mt-4 flex flex-wrap gap-6">
 				{chatbots.map((chatbot) => (
 					<Chatbot
 						key={chatbot.name}
@@ -19,7 +21,7 @@ const ListPageGridView = ({ chatbots }: Props) => {
 				))}
 			</div>
 			<hr className="my-10" />
-			<div className="flex gap-6">
+			<div className="flex flex-wrap gap-6">
 				{chatbots.map((chatbot) => (
 					<Chatbot key={chatbot.name} variant="card" chatbot={chatbot} />
 				))}

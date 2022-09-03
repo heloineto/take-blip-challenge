@@ -3,9 +3,7 @@ import classNames from "../../../lib/utils/classNames";
 import OrganizeGrid from "../../icons/OrganizeGrid";
 import OrganizeList from "../../icons/OrganizeList";
 
-interface Props {}
-
-const ListPageOrganization = (props: Props) => {
+const ListPageOrganization = () => {
 	const { view, setView } = useListPage();
 
 	return (

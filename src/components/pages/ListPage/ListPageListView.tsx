@@ -1,11 +1,13 @@
-import { ChatbotType } from "../../../@types/chatbots";
+import { useListPage } from "../../../lib/contexts/ListPageContext";
 import Chatbot from "../../elements/Chatbot";
 
-interface Props {
-	chatbots: ChatbotType[];
-}
+const ListPageListView = () => {
+	const { chatbots } = useListPage();
 
-const ListPageListView = ({ chatbots }: Props) => {
+	if (!chatbots) {
+		return <div></div>;
+	}
+
 	return (
 		<div className="mt-16">
 			<div className="flex flex-col gap-4">

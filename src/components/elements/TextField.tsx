@@ -22,6 +22,7 @@ const TextField = ({ name, label, className, ...restProps }: Props) => {
 					className
 				)}
 				placeholder={label}
+				{...restProps}
 			/>
 		</div>
 	);
