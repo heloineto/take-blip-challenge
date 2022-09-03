@@ -1,21 +1,35 @@
 import { motion } from "framer-motion";
+import { forwardRef } from "react";
 import classNames from "../../../lib/utils/classNames";
 import formatDate from "../../../lib/utils/formatDate";
 import Card from "../Card";
 import ChatbotStar from "./ChatbotStar";
 import { ChatbotProps } from "./types";
 
-const ChatbotRow = ({
-	chatbot,
-	favorite = false,
-	className,
-	...restProps
-}: ChatbotProps) => {
+const spring = {
+	type: "spring",
+	damping: 25,
+	stiffness: 120,
+};
+
+const ChatbotRow = forwardRef<HTMLDivElement, ChatbotProps>(function ChatbotRow(
+	{ chatbot, favorite = false, className, ...restProps },
+	ref
+) {
 	const { name, created } = chatbot;
 
 	return (
 		<motion.div
 			className={classNames("flex items-center gap-5", className)}
+			key={chatbot.name}
+			layout
+			transition={spring}
+			initial={{ scale: 0, opacity: 0 }}
+			animate={{ scale: 1, opacity: 1 }}
+			exit={{ scale: 0, opacity: 0 }}
+			whileHover={{ scale: 1.025 }}
+			whileTap={{ scale: 0.975 }}
+			ref={ref}
 			{...restProps}
 		>
 			<ChatbotStar className="" favorite={favorite} />
@@ -30,6 +44,6 @@ const ChatbotRow = ({
 			</Card>
 		</motion.div>
 	);
-};
+});
 
 export default ChatbotRow;
