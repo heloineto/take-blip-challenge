@@ -9,3 +9,13 @@ export const getChatbots = async () => {
 
 	return data;
 };
+
+export const getChatbotProfile = async (shortName: string) => {
+	const response = await fetch(`${BASE_URL}/${shortName}/details`, {
+		headers: { Accept: "*/*" },
+	});
+
+	const data = await response.json();
+
+	return data;
+};

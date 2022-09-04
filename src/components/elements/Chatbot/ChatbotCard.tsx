@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import classNames from "../../../lib/utils/classNames";
-import snakeCase from "../../../lib/utils/toSnakeCase";
+import snakeCase from "../../../lib/utils/snakeCase";
 import Card from "../Card";
 import ChatbotStar from "./ChatbotStar";
 import { ChatbotProps } from "./types";

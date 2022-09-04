@@ -10,7 +10,7 @@ const App = () => {
 			<div className="mx-auto flex w-[1246px] flex-grow flex-col">
 				<Routes>
 					<Route path="/" element={<ListPage />} />
-					<Route path="/chatbot/:id" element={<ProfilePage />} />
+					<Route path="/chatbot/:shortName" element={<ProfilePage />} />
 				</Routes>
 			</div>
 		</div>
