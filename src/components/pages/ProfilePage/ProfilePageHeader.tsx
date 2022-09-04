@@ -1,6 +1,5 @@
 import { useProfilePage } from "../../../lib/contexts/ProfilePageContext";
 import formatDate from "../../../lib/utils/formatDate";
-import MessageBubble from "../../icons/MessageBubble";
 
 interface Props {}
 
@@ -10,10 +9,6 @@ const ProfilePageHeader = (props: Props) => {
 	return (
 		<div className="flex w-full items-center justify-between">
 			<div className="flex gap-2">
-				<div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#DEE8EC]">
-					<MessageBubble />
-				</div>
-
 				<img
 					className="flex h-14 w-14 items-center justify-center rounded-full object-cover"
 					src={profile.image}
@@ -21,10 +16,10 @@ const ProfilePageHeader = (props: Props) => {
 				/>
 				<div>
 					<h1 className="text-2xl font-bold text-[#56616E]">{profile.name}</h1>
-					<div className="text-sm text-slate-500">Id: {profile.shortName}</div>
+					<div className="text-sm text-gray-500">Id: {profile.shortName}</div>
 				</div>
 			</div>
-			<div className="text-sm text-slate-500">
+			<div className="text-sm text-gray-500">
 				Created at {formatDate(new Date(profile.created))}
 			</div>
 		</div>

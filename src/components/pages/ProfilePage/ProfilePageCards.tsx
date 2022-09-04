@@ -15,11 +15,7 @@ const ProfilePageCards = () => {
 				<dl className="flex flex-col gap-3 text-sm text-[#52636C]">
 					<div className="space-y-1">
 						<dt>Region and idiom</dt>
-						{profile !== null ? (
-							<dd className="font-semibold">{profile.culture}</dd>
-						) : (
-							<div></div>
-						)}
+						<dd className="font-semibold">{profile.culture}</dd>
 					</div>
 					<div className="space-y-1">
 						<dt>Timezone</dt>
@@ -43,7 +39,7 @@ const ProfilePageCards = () => {
 				<img src="/hot-air-balloon.svg" alt="hot air balloon" />
 
 				<div>
-					<p className="text-slate-500">Status account</p>
+					<p className="text-gray-500">Status account</p>
 					<div className="text-2xl text-[#56616E]">Free</div>
 				</div>
 				<Button className="mx-auto">Update account</Button>
