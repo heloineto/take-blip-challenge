@@ -10,7 +10,12 @@ const ListPageListView = () => {
 			<div className="flex flex-col gap-4">
 				<AnimatePresence initial={false} mode={"popLayout"}>
 					{chatbots.map((chatbot) => (
-						<Chatbot key={chatbot.name} variant="row" chatbot={chatbot} />
+						<Chatbot
+							key={chatbot.name}
+							variant="row"
+							chatbot={chatbot}
+							favorite
+						/>
 					))}
 				</AnimatePresence>
 			</div>

@@ -10,7 +10,12 @@ const ListPageGridView = () => {
 			<div className="mt-4 flex flex-wrap gap-6">
 				<AnimatePresence initial={false} mode={"popLayout"}>
 					{chatbots.map((chatbot) => (
-						<Chatbot key={chatbot.name} variant="card" chatbot={chatbot} />
+						<Chatbot
+							key={chatbot.name}
+							variant="card"
+							chatbot={chatbot}
+							favorite
+						/>
 					))}
 				</AnimatePresence>
 			</div>

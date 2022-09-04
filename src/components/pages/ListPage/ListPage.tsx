@@ -16,6 +16,7 @@ const ProfilePage = () => {
 	const [untouchedChatbots, setUntouchedChatbots] = useState<
 		ChatbotType[] | null
 	>(null);
+	const [favoriteKeys, setFavoriteKeys] = useState<string[]>([]);
 	const [error, setError] = useState<unknown | null>(null);
 	const loading = chatbots === null;
 
@@ -40,6 +41,8 @@ const ProfilePage = () => {
 		chatbots,
 		setChatbots,
 		untouchedChatbots,
+		favoriteKeys,
+		setFavoriteKeys,
 	};
 
 	return (

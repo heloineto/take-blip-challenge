@@ -8,7 +8,11 @@ const ListPageOrganization = () => {
 
 	return (
 		<div className="flex gap-1">
-			<button type="button" onClick={() => setView("grid")}>
+			<button
+				type="button"
+				onClick={() => setView("grid")}
+				title="View as grid"
+			>
 				<OrganizeGrid
 					className={classNames(
 						view === "grid" ? "text-slate-500" : "text-slate-200",
@@ -16,7 +20,11 @@ const ListPageOrganization = () => {
 					)}
 				/>
 			</button>
-			<button type="button" onClick={() => setView("list")}>
+			<button
+				type="button"
+				onClick={() => setView("list")}
+				title="View as list"
+			>
 				<OrganizeList
 					className={classNames(
 						view === "list" ? "text-slate-500" : "text-slate-200",

@@ -22,7 +22,7 @@ const ChatbotCard = forwardRef<HTMLDivElement, ChatbotProps>(
 
 		return (
 			<motion.div
-				className={classNames("", className)}
+				className={classNames("relative", className)}
 				key={chatbot.name}
 				layout
 				transition={spring}
@@ -30,16 +30,20 @@ const ChatbotCard = forwardRef<HTMLDivElement, ChatbotProps>(
 				animate={{ scale: 1, opacity: 1 }}
 				exit={{ scale: 0, opacity: 0 }}
 				whileHover={{ scale: 1.1 }}
-				whileTap={{ scale: 0.95 }}
 				ref={ref}
 				{...restProps}
 			>
+				<motion.button
+					className="absolute top-0 left-0 p-2"
+					whileHover={{ scale: 1.2 }}
+					whileTap={{ scale: 0.95 }}
+					title={favorite ? "Remove from favorites" : "Add to favorites"}
+					onClick={(e) => e.preventDefault()}
+				>
+					<ChatbotStar favorite={favorite} />
+				</motion.button>
 				<Link to={`/chatbot/${snakeCase(name)}`}>
-					<Card className="relative flex h-48 w-48 cursor-pointer flex-col items-center justify-center gap-4">
-						<ChatbotStar
-							className="absolute top-2 left-2"
-							favorite={favorite}
-						/>
+					<Card className="flex h-48 w-48 cursor-pointer flex-col items-center justify-center gap-4">
 						<div className="h-12 w-12 rounded-full bg-sky-500"></div>
 						<div className="text-center">
 							<h3 className="font-bold text-slate-600">{name}</h3>
