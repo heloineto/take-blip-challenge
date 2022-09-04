@@ -8,8 +8,8 @@ type ListPageContextType = {
 	chatbots: ChatbotType[];
 	setChatbots: Dispatch<SetStateAction<ChatbotType[] | null>>;
 	untouchedChatbots: ChatbotType[] | null;
-	favoriteKeys: string[];
-	setFavoriteKeys: Dispatch<SetStateAction<string[]>>;
+	favoriteNames: string[];
+	setFavoriteNames: Dispatch<SetStateAction<string[]>>;
 };
 
 export const ListPageContext = createContext<ListPageContextType | undefined>(

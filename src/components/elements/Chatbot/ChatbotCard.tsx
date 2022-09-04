@@ -15,7 +15,14 @@ const spring = {
 
 const ChatbotCard = forwardRef<HTMLDivElement, ChatbotProps>(
 	function ChatbotCard(
-		{ chatbot, favorite = false, className, id, ...restProps },
+		{
+			chatbot,
+			favorite = false,
+			className,
+			onChangeFavorite,
+			id,
+			...restProps
+		},
 		ref
 	) {
 		const { name, type } = chatbot;
@@ -38,7 +45,10 @@ const ChatbotCard = forwardRef<HTMLDivElement, ChatbotProps>(
 					whileHover={{ scale: 1.2 }}
 					whileTap={{ scale: 0.95 }}
 					title={favorite ? "Remove from favorites" : "Add to favorites"}
-					onClick={(e) => e.preventDefault()}
+					onClick={(event) => {
+						event.preventDefault();
+						onChangeFavorite();
+					}}
 				>
 					<ChatbotStar favorite={favorite} />
 				</motion.button>
