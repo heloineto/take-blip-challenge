@@ -1,21 +1,41 @@
+import { useProfilePage } from "../../../lib/contexts/ProfilePageContext";
 import Button from "../../elements/Button";
 import Card from "../../elements/Card";
 import MessageReceived from "../../icons/MessageReceived";
 import MessageSent from "../../icons/MessageSent";
 import User from "../../icons/User";
 
-interface Props {}
+const ProfilePageCards = () => {
+	const { profile } = useProfilePage();
 
-const ProfilePageCards = (props: Props) => {
+	if (profile === null) {
+		return null;
+	}
+
+	const { user, message } = profile.analytics;
+
 	return (
 		<div className="grid flex-grow grid-flow-row grid-cols-12 gap-6">
-			<Card className="col-span-3"></Card>
+			<Card className="col-span-3 p-8">
+				<dl className="flex flex-col gap-3 text-sm text-[#52636C]">
+					<div className="space-y-1">
+						<dt>Region and idiom</dt>
+						<dd className="font-semibold">{profile.culture}</dd>
+					</div>
+					<div className="space-y-1">
+						<dt>Timezone</dt>
+						<dd className="font-semibold">(UTC - 03:00) Brasília</dd>
+					</div>
+				</dl>
+			</Card>
 			<Card className="col-span-6 flex items-center gap-4 p-8">
 				<div className="flex h-14 w-14 items-center justify-center rounded-full bg-sky-500 text-white">
 					<User className="ml-1 mb-0.5" />
 				</div>
 				<div className="text-[#52636C]">
-					<div className="font-extrabold">1.000</div>
+					<div className="font-extrabold">
+						{user.actived.toLocaleString("pt-BR")}
+					</div>
 					<p>Usuários ativos</p>
 				</div>
 			</Card>
@@ -35,7 +55,9 @@ const ProfilePageCards = (props: Props) => {
 					<MessageReceived className="mt-px" />
 				</div>
 				<div className="text-[#52636C]">
-					<div className="font-extrabold">1.000</div>
+					<div className="font-extrabold">
+						{message.received.toLocaleString("pt-BR")}
+					</div>
 					<p>Mensagens recebidas</p>
 				</div>
 			</Card>
@@ -44,8 +66,10 @@ const ProfilePageCards = (props: Props) => {
 					<MessageSent className="mt-px" />
 				</div>
 				<div className="text-[#52636C]">
-					<div className="font-extrabold">1.000</div>
-					<p>Usuários ativos</p>
+					<div className="font-extrabold">
+						{message.sent.toLocaleString("pt-BR")}
+					</div>
+					<p>Mensagens enviadas</p>
 				</div>
 			</Card>
 		</div>
