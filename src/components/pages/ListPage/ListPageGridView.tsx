@@ -5,10 +5,6 @@ import Chatbot from "../../elements/Chatbot";
 const ListPageGridView = () => {
 	const { chatbots } = useListPage();
 
-	if (!chatbots) {
-		return <div></div>;
-	}
-
 	return (
 		<div>
 			<div className="mt-4 flex flex-wrap gap-6">

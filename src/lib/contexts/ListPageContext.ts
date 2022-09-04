@@ -5,7 +5,7 @@ import { View } from "../../components/pages/ListPage/types";
 type ListPageContextType = {
 	view: View;
 	setView: Dispatch<SetStateAction<View>>;
-	chatbots: ChatbotType[] | null;
+	chatbots: ChatbotType[];
 	setChatbots: Dispatch<SetStateAction<ChatbotType[] | null>>;
 	untouchedChatbots: ChatbotType[] | null;
 };

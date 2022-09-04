@@ -49,7 +49,7 @@ const ListPageHeader = () => {
 	};
 
 	return (
-		<div className="mt-[32px] flex justify-between">
+		<div className="flex justify-between">
 			<h1 className="mt-2 text-3xl font-extrabold leading-10 text-[#56616E]">
 				My chatbots
 			</h1>

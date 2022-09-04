@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom";
 import BlipLogo from "./BlipLogo";
 
-interface Props {}
-
-const TopBar = (props: Props) => {
+const TopBar = () => {
 	return (
-		<div className="h-[44px] w-full bg-[#1A2437] flex justify-center items-center">
-			<BlipLogo />
+		<div className="flex h-[44px] w-full items-center justify-center bg-[#1A2437]">
+			<Link to="/">
+				<BlipLogo />
+			</Link>
 		</div>
 	);
 };
