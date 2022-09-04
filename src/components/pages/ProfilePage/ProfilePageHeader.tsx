@@ -15,7 +15,7 @@ const ProfilePageHeader = (props: Props) => {
 					alt="profile"
 				/>
 				<div>
-					<h1 className="text-2xl font-bold text-[#56616E]">{profile.name}</h1>
+					<h1 className="text-2xl font-bold text-gray-600">{profile.name}</h1>
 					<div className="text-sm text-gray-500">Id: {profile.shortName}</div>
 				</div>
 			</div>

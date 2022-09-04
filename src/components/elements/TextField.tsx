@@ -18,7 +18,7 @@ const TextField = ({ name, label, className, ...restProps }: Props) => {
 				name={name}
 				id={id}
 				className={classNames(
-					"block w-full rounded-lg border border-[#D2DFE6] text-sm font-semibold focus:border-sky-500 focus:ring-sky-500",
+					"block w-full rounded-lg border border-slate-200 text-sm font-semibold focus:border-sky-500 focus:ring-sky-500",
 					className
 				)}
 				placeholder={label}

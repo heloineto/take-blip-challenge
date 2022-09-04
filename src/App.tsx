@@ -5,7 +5,7 @@ import ProfilePage from "./components/pages/ProfilePage";
 
 const App = () => {
 	return (
-		<div className="flex min-h-screen flex-col bg-[#F5F8F9]">
+		<div className="flex min-h-screen flex-col bg-slate-50">
 			<TopBar />
 			<div className="mx-auto flex w-[1246px] flex-grow flex-col">
 				<Routes>

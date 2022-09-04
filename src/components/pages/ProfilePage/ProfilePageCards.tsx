@@ -12,7 +12,7 @@ const ProfilePageCards = () => {
 	return (
 		<div className="grid flex-grow grid-flow-row grid-cols-12 gap-6">
 			<Card className="col-span-3 p-8">
-				<dl className="flex flex-col gap-3 text-sm text-[#52636C]">
+				<dl className="flex flex-col gap-3 text-sm text-slate-600">
 					<div className="space-y-1">
 						<dt>Region and idiom</dt>
 						<dd className="font-semibold">{profile.culture}</dd>
@@ -27,7 +27,7 @@ const ProfilePageCards = () => {
 				<div className="flex h-14 w-14 items-center justify-center rounded-full bg-sky-500 text-white">
 					<User className="ml-1 mb-0.5" />
 				</div>
-				<div className="text-[#52636C]">
+				<div className="text-slate-600">
 					<div className="font-extrabold">
 						{user.actived.toLocaleString("pt-BR")}
 					</div>
@@ -40,7 +40,7 @@ const ProfilePageCards = () => {
 
 				<div>
 					<p className="text-gray-500">Status account</p>
-					<div className="text-2xl text-[#56616E]">Free</div>
+					<div className="text-2xl text-gray-600">Free</div>
 				</div>
 				<Button className="mx-auto">Update account</Button>
 			</div>
@@ -49,7 +49,7 @@ const ProfilePageCards = () => {
 				<div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white">
 					<MessageReceived className="mt-px" />
 				</div>
-				<div className="text-[#52636C]">
+				<div className="text-slate-600">
 					<div className="font-extrabold">
 						{message.received.toLocaleString("pt-BR")}
 					</div>
@@ -60,7 +60,7 @@ const ProfilePageCards = () => {
 				<div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 text-white">
 					<MessageSent className="mt-px" />
 				</div>
-				<div className="text-[#52636C]">
+				<div className="text-slate-600">
 					<div className="font-extrabold">
 						{message.sent.toLocaleString("pt-BR")}
 					</div>

@@ -33,10 +33,10 @@ const ProfilePage = (props: Props) => {
 		<ProfilePageContext.Provider value={value}>
 			<div className="flex flex-grow flex-col pt-8 pb-12">
 				<ProfilePageHeader />
-				<hr className="mt-8 mb-6 bg-[#B9CBD3]" />
+				<hr className="mt-8 mb-6 bg-slate-300" />
 				<ProfilePageCards />
-				<hr className="mt-11 mb-3 bg-[#B9CBD3]" />
-				<p className="text-center text-[#738192]">
+				<hr className="mt-11 mb-3 bg-slate-300" />
+				<p className="text-center text-slate-400">
 					&copy;2019, BLiP Todos os direitos reservados |{" "}
 					<span className="font-bold">Termos de Uso</span>
 				</p>

@@ -11,15 +11,15 @@ const ListPageOrganization = () => {
 			<button type="button" onClick={() => setView("grid")}>
 				<OrganizeGrid
 					className={classNames(
-						view === "grid" ? "text-[#6E7B91]" : "text-[#D2DFE6]",
+						view === "grid" ? "text-slate-500" : "text-slate-200",
 						"transition-colors"
 					)}
 				/>
 			</button>
-			<button onClick={() => setView("list")}>
+			<button type="button" onClick={() => setView("list")}>
 				<OrganizeList
 					className={classNames(
-						view === "list" ? "text-[#6E7B91]" : "text-[#D2DFE6]",
+						view === "list" ? "text-slate-500" : "text-slate-200",
 						"transition-colors"
 					)}
 				/>

@@ -42,8 +42,8 @@ const ChatbotCard = forwardRef<HTMLDivElement, ChatbotProps>(
 						/>
 						<div className="h-12 w-12 rounded-full bg-sky-500"></div>
 						<div className="text-center">
-							<h3 className="font-bold text-[#52636C]">{name}</h3>
-							<p className="text-xs font-normal leading-5 text-[#738192]">
+							<h3 className="font-bold text-slate-600">{name}</h3>
+							<p className="text-xs font-normal leading-5 text-slate-400">
 								{type}
 							</p>
 						</div>

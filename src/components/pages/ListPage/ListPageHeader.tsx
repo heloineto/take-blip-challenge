@@ -50,7 +50,7 @@ const ListPageHeader = () => {
 
 	return (
 		<div className="flex justify-between">
-			<h1 className="mt-2 text-3xl font-extrabold leading-10 text-[#56616E]">
+			<h1 className="mt-2 text-3xl font-extrabold leading-10 text-gray-600">
 				My chatbots
 			</h1>
 

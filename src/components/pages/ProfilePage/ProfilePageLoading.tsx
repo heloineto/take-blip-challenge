@@ -22,10 +22,10 @@ const ProfilePageLoading = (props: Props) => {
 				</div>
 				<div className="h-4 w-36 animate-pulse rounded-full bg-slate-200"></div>
 			</div>
-			<hr className="mt-8 mb-6 bg-[#B9CBD3]" />
+			<hr className="mt-8 mb-6 bg-slate-300" />
 			<div className="grid flex-grow grid-flow-row grid-cols-12 gap-6">
 				<Card className="col-span-3 p-8">
-					<dl className="flex flex-col gap-3 text-sm text-[#52636C]">
+					<dl className="flex flex-col gap-3 text-sm text-slate-600">
 						<div className="space-y-1">
 							<dt>Region and idiom</dt>
 							<div className="mt-1 h-4 w-32 animate-pulse rounded-full bg-slate-200"></div>
@@ -40,7 +40,7 @@ const ProfilePageLoading = (props: Props) => {
 					<div className="flex h-14 w-14 items-center justify-center rounded-full bg-sky-500 text-white">
 						<User className="ml-1 mb-0.5" />
 					</div>
-					<div className="text-[#52636C]">
+					<div className="text-slate-600">
 						<div className="mb-1 h-5 w-32 animate-pulse rounded-full bg-slate-200"></div>
 						<p>Usuários ativos</p>
 					</div>
@@ -51,7 +51,7 @@ const ProfilePageLoading = (props: Props) => {
 
 					<div>
 						<p className="text-gray-500">Status account</p>
-						<div className="text-2xl text-[#56616E]">Free</div>
+						<div className="text-2xl text-gray-600">Free</div>
 					</div>
 					<Button className="mx-auto">Update account</Button>
 				</div>
@@ -60,7 +60,7 @@ const ProfilePageLoading = (props: Props) => {
 					<div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white">
 						<MessageReceived className="mt-px" />
 					</div>
-					<div className="text-[#52636C]">
+					<div className="text-slate-600">
 						<div className="mb-1 h-5 w-32 animate-pulse rounded-full bg-slate-200"></div>
 						<p>Mensagens recebidas</p>
 					</div>
@@ -69,14 +69,14 @@ const ProfilePageLoading = (props: Props) => {
 					<div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 text-white">
 						<MessageSent className="mt-px" />
 					</div>
-					<div className="text-[#52636C]">
+					<div className="text-slate-600">
 						<div className="mb-1 h-5 w-32 animate-pulse rounded-full bg-slate-200"></div>
 						<p>Mensagens enviadas</p>
 					</div>
 				</Card>
 			</div>
-			<hr className="mt-11 mb-3 bg-[#B9CBD3]" />
-			<p className="text-center text-[#738192]">
+			<hr className="mt-11 mb-3 bg-slate-300" />
+			<p className="text-center text-slate-400">
 				&copy;2019, BLiP Todos os direitos reservados |{" "}
 				<span className="font-bold">Termos de Uso</span>
 			</p>

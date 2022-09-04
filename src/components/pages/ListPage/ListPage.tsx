@@ -7,11 +7,10 @@ import Add from "../../icons/Add";
 import ListPageGridView from "./ListPageGridView";
 import ListPageHeader from "./ListPageHeader";
 import ListPageListView from "./ListPageListView";
+import ListPageLoading from "./ListPageLoading";
 import { View } from "./types";
 
-interface Props {}
-
-const ProfilePage = (props: Props) => {
+const ProfilePage = () => {
 	const [view, setView] = useState<View>("grid");
 	const [chatbots, setChatbots] = useState<ChatbotType[] | null>(null);
 	const [untouchedChatbots, setUntouchedChatbots] = useState<
@@ -32,7 +31,7 @@ const ProfilePage = (props: Props) => {
 	}, []);
 
 	if (loading) {
-		return null;
+		return <ListPageLoading />;
 	}
 
 	const value = {
