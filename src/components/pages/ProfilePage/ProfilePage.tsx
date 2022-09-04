@@ -1,17 +1,25 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { ChatbotProfile } from "../../../@types/chatbots";
 import { getChatbotProfile } from "../../../lib/api";
 import { ProfilePageContext } from "../../../lib/contexts/ProfilePageContext";
 import Button from "../../elements/Button";
 import Card from "../../elements/Card";
+import MessageReceived from "../../icons/MessageReceived";
+import MessageSent from "../../icons/MessageSent";
+import User from "../../icons/User";
+import ProfilePageHeader from "./ProfilePageHeader";
 
 interface Props {}
 
 const ProfilePage = (props: Props) => {
+	const { shortName } = useParams();
 	const [profile, setProfile] = useState<ChatbotProfile | null>(null);
 
 	useEffect(() => {
-		getChatbotProfile();
+		if (!shortName) return;
+
+		getChatbotProfile(shortName).then((data) => setProfile(data));
 	}, []);
 
 	const value = { profile, setProfile };
@@ -19,21 +27,14 @@ const ProfilePage = (props: Props) => {
 	return (
 		<ProfilePageContext.Provider value={value}>
 			<div className="flex flex-grow flex-col pt-8 pb-12">
-				<div className="flex w-full items-center justify-between">
-					<div className="flex gap-2">
-						<div className="h-14 w-14 rounded-full bg-[#DEE8EC]"></div>
-						<div>
-							<h1 className="text-2xl font-bold text-[#56616E]">Botname</h1>
-							<div className="text-sm text-[#8CA0B3]">Id: botname</div>
-						</div>
-					</div>
-					<div className="text-sm text-[#8CA0B3]">Created at 11/09/2019</div>
-				</div>
+				<ProfilePageHeader />
 				<hr className="mt-8 mb-6 bg-[#B9CBD3]" />
 				<div className="grid flex-grow grid-flow-row grid-cols-12 gap-6">
 					<Card className="col-span-3"></Card>
 					<Card className="col-span-6 flex items-center gap-4 p-8">
-						<div className="h-14 w-14 rounded-full bg-sky-500"></div>
+						<div className="flex h-14 w-14 items-center justify-center rounded-full bg-sky-500 text-white">
+							<User className="ml-1 mb-0.5" />
+						</div>
 						<div className="text-[#52636C]">
 							<div className="font-extrabold">1.000</div>
 							<p>Usuários ativos</p>
@@ -51,14 +52,18 @@ const ProfilePage = (props: Props) => {
 					</div>
 
 					<Card className="col-span-6 flex items-center gap-4 p-8">
-						<div className="h-14 w-14 rounded-full bg-green-500"></div>
+						<div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white">
+							<MessageReceived className="mt-px" />
+						</div>
 						<div className="text-[#52636C]">
 							<div className="font-extrabold">1.000</div>
-							<p>Usuários ativos</p>
+							<p>Mensagens recebidas</p>
 						</div>
 					</Card>
 					<Card className="col-span-3 flex items-center gap-4 p-8">
-						<div className="h-14 w-14 rounded-full bg-blue-500"></div>
+						<div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 text-white">
+							<MessageSent className="mt-px" />
+						</div>
 						<div className="text-[#52636C]">
 							<div className="font-extrabold">1.000</div>
 							<p>Usuários ativos</p>
