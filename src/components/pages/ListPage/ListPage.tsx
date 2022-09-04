@@ -17,12 +17,17 @@ const ProfilePage = (props: Props) => {
 	const [untouchedChatbots, setUntouchedChatbots] = useState<
 		ChatbotType[] | null
 	>(null);
+	const [error, setError] = useState<unknown | null>(null);
 
 	useEffect(() => {
-		getChatbots().then((data) => {
-			setChatbots(data);
-			setUntouchedChatbots(data);
-		});
+		getChatbots()
+			.then((data) => {
+				setChatbots(data);
+				setUntouchedChatbots(data);
+			})
+			.catch((error) => {
+				setError(error);
+			});
 	}, []);
 
 	const value = {

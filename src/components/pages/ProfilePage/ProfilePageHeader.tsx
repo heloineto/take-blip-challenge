@@ -7,10 +7,6 @@ interface Props {}
 const ProfilePageHeader = (props: Props) => {
 	const { profile } = useProfilePage();
 
-	if (profile === null) {
-		return null;
-	}
-
 	return (
 		<div className="flex w-full items-center justify-between">
 			<div className="flex gap-2">
@@ -25,10 +21,10 @@ const ProfilePageHeader = (props: Props) => {
 				/>
 				<div>
 					<h1 className="text-2xl font-bold text-[#56616E]">{profile.name}</h1>
-					<div className="text-sm text-[#8CA0B3]">Id: {profile.shortName}</div>
+					<div className="text-sm text-slate-500">Id: {profile.shortName}</div>
 				</div>
 			</div>
-			<div className="text-sm text-[#8CA0B3]">
+			<div className="text-sm text-slate-500">
 				Created at {formatDate(new Date(profile.created))}
 			</div>
 		</div>

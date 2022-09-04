@@ -1,22 +1,25 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ChatbotProfile } from "../../../@types/chatbots";
-import { getChatbotProfile } from "../../../lib/api";
 import { ProfilePageContext } from "../../../lib/contexts/ProfilePageContext";
 import ProfilePageCards from "./ProfilePageCards";
 import ProfilePageHeader from "./ProfilePageHeader";
+import ProfilePageLoading from "./ProfilePageLoading";
 
 interface Props {}
 
 const ProfilePage = (props: Props) => {
 	const { shortName } = useParams();
 	const [profile, setProfile] = useState<ChatbotProfile | null>(null);
+	const [error, setError] = useState<unknown | null>(null);
 
 	useEffect(() => {
 		if (!shortName) return;
-
-		getChatbotProfile(shortName).then((data) => setProfile(data));
 	}, []);
+
+	if (profile === null) {
+		return <ProfilePageLoading />;
+	}
 
 	const value = { profile, setProfile };
 
