@@ -56,7 +56,7 @@ const ListPageHeader = () => {
 
 			<div className="mb-2 flex gap-2">
 				<TextField
-					className="h-full w-[312px]"
+					className="h-full w-80"
 					name="search"
 					label="Search"
 					value={search}

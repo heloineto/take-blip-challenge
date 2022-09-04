@@ -16,11 +16,7 @@ const ListPageLoading = () => {
 				</h1>
 
 				<div className="mb-2 flex gap-2">
-					<TextField
-						className="h-full w-[312px]"
-						name="search"
-						label="Search"
-					/>
+					<TextField className="h-full w-80" name="search" label="Search" />
 					<Button>Order by name</Button>
 					<Button>Order by creation</Button>
 					<div className="flex gap-1">

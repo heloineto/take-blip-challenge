@@ -33,7 +33,7 @@ const ChatbotRow = forwardRef<HTMLDivElement, ChatbotProps>(function ChatbotRow(
 			{...restProps}
 		>
 			<ChatbotStar className="" favorite={favorite} />
-			<Card className="relative flex h-[60px] flex-grow items-center justify-between gap-4 px-6">
+			<Card className="relative flex h-[3.75rem] flex-grow items-center justify-between gap-4 px-6">
 				<div className="flex items-center gap-2">
 					<div className="h-7 w-7 rounded-full bg-sky-500" />
 					<h3 className="font-bold text-slate-600">{name}</h3>
