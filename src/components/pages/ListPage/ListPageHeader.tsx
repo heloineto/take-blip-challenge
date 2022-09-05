@@ -5,11 +5,11 @@ import Button from "../../elements/Button";
 import TextField from "../../elements/TextField";
 import ListPageOrganization from "./ListPageOrganization";
 
-const sortByName = (chatbots: ChatbotType[]) => {
+export const sortByName = (chatbots: ChatbotType[]) => {
 	return chatbots.sort((a, b) => a.name.localeCompare(b.name));
 };
 
-const sortByCreation = (chatbots: ChatbotType[]) => {
+export const sortByCreation = (chatbots: ChatbotType[]) => {
 	return chatbots.sort(
 		(a, b) => new Date(b.created).getTime() - new Date(a.created).getTime()
 	);

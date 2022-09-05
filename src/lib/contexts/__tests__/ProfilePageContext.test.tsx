@@ -24,7 +24,7 @@ const customRender = (
 const ProfilePageConsumer = () => {
 	const context = useProfilePage();
 
-	return <span>Received: {JSON.stringify(context)}</span>;
+	return <span>{JSON.stringify(context)}</span>;
 };
 
 describe("ProfilePageContext", () => {

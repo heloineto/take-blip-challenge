@@ -3,7 +3,7 @@ import ListPageGridView from "../ListPageGridView";
 import { renderWithListPageCtx } from "./ListPageLoading.test";
 
 describe("ListPageLoading", () => {
-	it("renders", () => {
+	it("renders a grid of chatbots", () => {
 		renderWithListPageCtx(<ListPageGridView />);
 	});
 });

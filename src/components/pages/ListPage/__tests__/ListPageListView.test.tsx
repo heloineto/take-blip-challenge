@@ -3,7 +3,7 @@ import ListPageListView from "../ListPageListView";
 import { renderWithListPageCtx } from "./ListPageLoading.test";
 
 describe("ListPageLoading", () => {
-	it("renders", () => {
+	it("renders a list of chatbots", () => {
 		renderWithListPageCtx(<ListPageListView />);
 	});
 });

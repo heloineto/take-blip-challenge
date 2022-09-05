@@ -12,6 +12,7 @@ const ListPageOrganization = () => {
 				type="button"
 				onClick={() => setView("grid")}
 				title="View as grid"
+				data-testid="grid-view"
 			>
 				<OrganizeGrid
 					className={classNames(
@@ -24,6 +25,7 @@ const ListPageOrganization = () => {
 				type="button"
 				onClick={() => setView("list")}
 				title="View as list"
+				data-testid="list-view"
 			>
 				<OrganizeList
 					className={classNames(

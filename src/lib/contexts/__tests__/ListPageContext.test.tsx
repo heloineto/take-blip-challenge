@@ -24,7 +24,7 @@ const customRender = (
 const ListPageConsumer = () => {
 	const context = useListPage();
 
-	return <span>Received: {JSON.stringify(context)}</span>;
+	return <span>{JSON.stringify(context)}</span>;
 };
 
 describe("ListPageContext", () => {
