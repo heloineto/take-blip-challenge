@@ -47,7 +47,10 @@ const ChatbotCard = forwardRef<HTMLDivElement, ChatbotProps>(
 					<ChatbotStar favorite={favorite} />
 				</motion.button>
 				<Link to={`/chatbot/${snakeCase(name)}`}>
-					<Card className="flex h-48 w-48 cursor-pointer flex-col items-center justify-center gap-4">
+					<Card
+						data-testid="chatbot-card"
+						className="flex h-48 w-48 cursor-pointer flex-col items-center justify-center gap-4"
+					>
 						<div
 							className="h-12 w-12 rounded-full"
 							style={{ backgroundColor: getColor(chatbot.name) }}

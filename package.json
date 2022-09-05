@@ -31,12 +31,6 @@
       "react-app/jest"
     ]
   },
-  "jest": {
-    "coveragePathIgnorePatterns": [
-      "src/App.tsx",
-      "src/index.tsx"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -51,8 +45,7 @@
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.2",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/react-hooks": "^8.0.1",
+    "@testing-library/react": "13.1",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "autoprefixer": "^10.4.8",
     "eslint": "^8.23.0",

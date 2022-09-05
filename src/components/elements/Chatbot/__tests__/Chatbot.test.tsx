@@ -1,5 +1,6 @@
 import "@testing-library/jest-dom";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import Chatbot from "../Chatbot";
 
 describe("Chatbot", () => {
@@ -11,23 +12,31 @@ describe("Chatbot", () => {
 
 	it('will render ChatbotCard if `variant="card"`', () => {
 		render(
-			<Chatbot variant="card" chatbot={chatbot} onChangeFavorite={jest.fn()} />
+			<BrowserRouter>
+				<Chatbot
+					variant="card"
+					chatbot={chatbot}
+					onChangeFavorite={jest.fn()}
+				/>
+			</BrowserRouter>
 		);
 
-		const rowElement = document.querySelector("div.relative");
+		const colElement = screen.getByTestId("chatbot-card");
 
-		expect(rowElement).not.toBeNull();
-		expect(rowElement?.classList.contains("flex-row")).toBe(true);
+		expect(colElement).not.toBeNull();
+		expect(colElement.classList.contains("flex-col")).toBe(true);
 	});
 
 	it('will render ChatbotRow if `variant="row"`', () => {
 		render(
-			<Chatbot variant="row" chatbot={chatbot} onChangeFavorite={jest.fn()} />
+			<BrowserRouter>
+				<Chatbot variant="row" chatbot={chatbot} onChangeFavorite={jest.fn()} />
+			</BrowserRouter>
 		);
 
-		const colElement = document.querySelector("div.flex");
+		const rowElement = screen.getByTestId("chatbot-row");
 
-		expect(colElement).not.toBeNull();
-		expect(colElement?.classList.contains("flex-col")).toBe(true);
+		expect(rowElement).not.toBeNull();
+		expect(rowElement.classList.contains("flex-row")).toBe(true);
 	});
 });

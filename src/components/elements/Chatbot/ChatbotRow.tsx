@@ -46,7 +46,10 @@ const ChatbotRow = forwardRef<HTMLDivElement, ChatbotProps>(function ChatbotRow(
 				<ChatbotStar favorite={favorite} />
 			</motion.button>
 			<Link className="contents" to={`/chatbot/${snakeCase(name)}`}>
-				<Card className="relative flex h-[3.75rem] flex-grow flex-row items-center justify-between gap-4 px-6">
+				<Card
+					data-testid="chatbot-row"
+					className="relative flex h-[3.75rem] flex-grow flex-row items-center justify-between gap-4 px-6"
+				>
 					<div className="flex items-center gap-2">
 						<div
 							className="h-7 w-7 rounded-full"
