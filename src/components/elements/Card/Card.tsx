@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react";
-import classNames from "../../lib/utils/classNames";
+import classNames from "../../../lib/utils/classNames";
 
 const Card = ({ className, ...restProps }: ComponentProps<"div">) => {
 	return (

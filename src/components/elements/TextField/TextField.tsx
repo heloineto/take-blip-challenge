@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 import { useId } from "react";
-import classNames from "../../lib/utils/classNames";
+import classNames from "../../../lib/utils/classNames";
 interface Props extends ComponentProps<"input"> {
 	label?: string;
 }

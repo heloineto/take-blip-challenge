@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react";
-import classNames from "../../lib/utils/classNames";
+import classNames from "../../../lib/utils/classNames";
 
 const Button = ({ className, ...restProps }: ComponentProps<"button">) => {
 	return (

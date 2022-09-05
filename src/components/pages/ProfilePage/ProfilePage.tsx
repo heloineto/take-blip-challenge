@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { ChatbotProfile } from "../../../@types/chatbots";
 import { getChatbotProfile } from "../../../lib/api";
 import { ProfilePageContext } from "../../../lib/contexts/ProfilePageContext";
+import ErrorState from "../../elements/ErrorState";
 import ProfilePageCards from "./ProfilePageCards";
 import ProfilePageHeader from "./ProfilePageHeader";
 import ProfilePageLoading from "./ProfilePageLoading";
@@ -13,13 +14,27 @@ const ProfilePage = () => {
 	const [error, setError] = useState<unknown | null>(null);
 	const loading = profile === null;
 
-	useEffect(() => {
-		if (!shortName) return;
+	const fetchProfile = () => {
+		if (!shortName) {
+			setError("Missing `shortName`");
+			return;
+		}
 
 		getChatbotProfile(shortName)
-			.then((data) => setProfile(data))
+			.then((data) => {
+				setError(null);
+				setProfile(data);
+			})
 			.catch((error) => setError(error));
+	};
+
+	useEffect(() => {
+		fetchProfile();
 	}, []);
+
+	if (error) {
+		return <ErrorState onRetry={fetchProfile} />;
+	}
 
 	if (loading) {
 		return <ProfilePageLoading />;

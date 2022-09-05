@@ -4,6 +4,7 @@ import { getChatbots } from "../../../lib/api";
 import { ListPageContext } from "../../../lib/contexts/ListPageContext";
 import useLocalStorage from "../../../lib/hooks/useLocalStorage";
 import ActionButton from "../../elements/ActionButton";
+import ErrorState from "../../elements/ErrorState";
 import Add from "../../icons/Add";
 import ListPageGridView from "./ListPageGridView";
 import ListPageHeader from "./ListPageHeader";
@@ -26,16 +27,25 @@ const ProfilePage = () => {
 		[]
 	);
 
-	useEffect(() => {
+	const fetchChatbots = () => {
 		getChatbots()
 			.then((data) => {
+				setError(null);
 				setChatbots(data);
 				setUntouchedChatbots(data);
 			})
 			.catch((error) => {
 				setError(error);
 			});
+	};
+
+	useEffect(() => {
+		fetchChatbots();
 	}, []);
+
+	if (error) {
+		return <ErrorState onRetry={fetchChatbots} />;
+	}
 
 	if (loading) {
 		return <ListPageLoading />;
