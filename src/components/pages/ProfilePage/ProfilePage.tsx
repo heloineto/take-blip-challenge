@@ -32,6 +32,10 @@ const ProfilePage = () => {
 		fetchProfile();
 	}, []);
 
+	if (true as boolean) {
+		return <pre>{JSON.stringify({ error, profile }, null, 2)}</pre>;
+	}
+
 	if (error) {
 		return <ErrorState onRetry={fetchProfile} />;
 	}

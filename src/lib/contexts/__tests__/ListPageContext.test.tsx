@@ -1,39 +1,60 @@
 import "@testing-library/jest-dom";
-import { render, RenderOptions } from "@testing-library/react";
+import { render, RenderOptions, screen } from "@testing-library/react";
 import { ComponentProps, ReactElement } from "react";
 import { ListPageContext, useListPage } from "../ListPageContext";
 
-// const ListPageProvider = () => {
-// 	const [view, setView] = useState<View>("grid");
-
-// 	const [chatbots, setChatbots] = useState<ChatbotType[] | null>([]);
-// 	const [untouchedChatbots, setUntouchedChatbots] = useState<
-// 		ChatbotType[] | null
-// 	>(null);
-
-// 	const [favoriteNames, setFavoriteNames] = useLocalStorage<string[]>(
-// 		"favoriteNames",
-// 		[]
-// 	);
-
-// 	return (
-// 		<ListPageContext.Provider
-// 			value={{
-// 				view,
-// 				setView,
-// 				chatbots: [],
-// 				setChatbots,
-// 				untouchedChatbots,
-// 				favoriteNames,
-// 				setFavoriteNames,
-// 			}}
-// 		></ListPageContext.Provider>
-// 	);
-// };
-
+type ProviderProps = ComponentProps<typeof ListPageContext.Provider>;
 interface CustomRenderOptions extends Omit<RenderOptions, "queries"> {
-	providerProps: ComponentProps<typeof ListPageContext.Provider>;
+	providerProps: ProviderProps;
 }
+
+const chatbots = [
+	{
+		name: "Billy Hargrove",
+		type: "router",
+		created: "2020-01-01T14:35:44.510Z",
+	},
+	{
+		name: "Suzie",
+		type: "builder",
+		created: "2020-01-01T14:35:44.510Z",
+	},
+	{
+		name: "Steve Harrington",
+		type: "builder",
+		created: "2020-01-11T14:35:44.510Z",
+	},
+	{
+		name: "Max",
+		type: "builder",
+		created: "2020-01-11T14:35:44.510Z",
+	},
+	{
+		name: "Eleven",
+		type: "router",
+		created: "2020-01-31T14:35:44.510Z",
+	},
+	{
+		name: "Mike",
+		type: "builder",
+		created: "2020-02-21T14:35:44.510Z",
+	},
+	{
+		name: "Dustin Henderson",
+		type: "builder",
+		created: "2020-03-21T14:35:44.510Z",
+	},
+	{
+		name: "Jonathan",
+		type: "builder",
+		created: "2020-03-31T14:35:44.510Z",
+	},
+	{
+		name: "Nancy Wheeler",
+		type: "builder",
+		created: "2020-05-31T14:35:44.510Z",
+	},
+];
 
 const customRender = (
 	ui: ReactElement,
@@ -61,18 +82,33 @@ describe("ListPageContext", () => {
 	});
 
 	it("passes down context to consumers", () => {
-		// const providerProps = {
-		// 	first: "Boba",
-		// 	last: "Fett",
-		// };
-		// customRender(
-		// 	<ListPageContext.Consumer>
-		// 		{(value) => <span>Received: {value}</span>}
-		// 	</ListPageContext.Consumer>,
-		// 	{ providerProps }
-		// );
-		// expect(screen.getByText(/^Received:/).textContent).toBe(
-		// 	"Received: Boba Fett"
-		// );
+		const providerProps: ProviderProps = {
+			value: {
+				chatbots,
+				favoriteNames: [],
+				untouchedChatbots: chatbots,
+				view: "grid",
+				setChatbots: jest.fn(),
+				setFavoriteNames: jest.fn(),
+				setView: jest.fn(),
+			},
+		};
+
+		customRender(
+			<ListPageContext.Consumer>
+				{(value) => (
+					<span data-testid="span">{`${JSON.stringify(value)}`}</span>
+				)}
+			</ListPageContext.Consumer>,
+			{ providerProps }
+		);
+
+		const spanElement = screen.getByTestId("span");
+
+		const json = JSON.parse(
+			spanElement.textContent ?? ""
+		) as ProviderProps["value"];
+
+		expect(json).toEqual(JSON.parse(JSON.stringify(providerProps.value)));
 	});
 });
