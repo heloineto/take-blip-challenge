@@ -2,6 +2,10 @@
 
 Você precisa construir um App em React que faça listagem dos contatos inteligentes conforme o layout no Figma.
 
+## Preview
+
+<img src="/preview/1-grid-favorites" width="100%" alt="registration page" />
+
 ## Requisitos
 
 - [x] A aplicação deverá cumprir todos os requisitos funcionais abaixo. Lembre-se também de seguir atentamente as diretrizes de entrega do projeto :)
