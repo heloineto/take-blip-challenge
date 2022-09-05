@@ -3,6 +3,7 @@ import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import classNames from "../../../lib/utils/classNames";
 import formatDate from "../../../lib/utils/formatDate";
+import getColor from "../../../lib/utils/getColor";
 import snakeCase from "../../../lib/utils/snakeCase";
 import Card from "../Card";
 import ChatbotStar from "./ChatbotStar";
@@ -47,7 +48,10 @@ const ChatbotRow = forwardRef<HTMLDivElement, ChatbotProps>(function ChatbotRow(
 			<Link className="contents" to={`/chatbot/${snakeCase(name)}`}>
 				<Card className="relative flex h-[3.75rem] flex-grow items-center justify-between gap-4 px-6">
 					<div className="flex items-center gap-2">
-						<div className="h-7 w-7 rounded-full bg-sky-500" />
+						<div
+							className="h-7 w-7 rounded-full"
+							style={{ backgroundColor: getColor(chatbot.name) }}
+						/>
 						<h3 className="font-bold text-slate-600">{name}</h3>
 					</div>
 					<p className="text-xs font-normal leading-5 text-slate-400">

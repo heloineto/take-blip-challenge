@@ -1,4 +1,3 @@
-import chatbots from "../../../lib/mocks/chatbots";
 import ActionButton from "../../elements/ActionButton";
 import Button from "../../elements/Button";
 import ChatbotLoading from "../../elements/Chatbot/ChatbotLoading";
@@ -34,15 +33,19 @@ const ListPageLoading = () => {
 			</h2>
 			<div>
 				<div className="mt-4 flex flex-wrap gap-6">
-					{chatbots.map((chatbot) => (
-						<ChatbotLoading key={chatbot.name} />
-					))}
+					<ChatbotLoading />
+					<ChatbotLoading />
+					<ChatbotLoading />
+					<ChatbotLoading />
+					<ChatbotLoading />
 				</div>
 				<hr className="my-10" />
 				<div className="flex flex-wrap gap-6">
-					{chatbots.map((chatbot) => (
-						<ChatbotLoading key={chatbot.name} />
-					))}
+					<ChatbotLoading />
+					<ChatbotLoading />
+					<ChatbotLoading />
+					<ChatbotLoading />
+					<ChatbotLoading />
 				</div>
 			</div>
 			<ActionButton className="fixed bottom-4 right-8">

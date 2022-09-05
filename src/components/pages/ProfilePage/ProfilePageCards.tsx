@@ -4,10 +4,13 @@ import Card from "../../elements/Card";
 import MessageReceived from "../../icons/MessageReceived";
 import MessageSent from "../../icons/MessageSent";
 import User from "../../icons/User";
+import getLocaleInfo from "./utils/getLocaleInfo";
 
 const ProfilePageCards = () => {
 	const { profile } = useProfilePage();
 	const { user, message } = profile.analytics;
+
+	const localeInfo = getLocaleInfo(profile.culture);
 
 	return (
 		<div className="grid flex-grow grid-flow-row grid-cols-12 gap-6">
@@ -15,11 +18,11 @@ const ProfilePageCards = () => {
 				<dl className="flex flex-col gap-3 text-sm text-slate-600">
 					<div className="space-y-1">
 						<dt>Region and idiom</dt>
-						<dd className="font-semibold">{profile.culture}</dd>
+						<dd className="font-semibold">{localeInfo.region}</dd>
 					</div>
 					<div className="space-y-1">
 						<dt>Timezone</dt>
-						<dd className="font-semibold">(UTC - 03:00) Brasília</dd>
+						<dd className="font-semibold">{localeInfo.timezone}</dd>
 					</div>
 				</dl>
 			</Card>

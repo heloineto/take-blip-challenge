@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ChatbotType } from "../../../@types/chatbots";
 import { getChatbots } from "../../../lib/api";
 import { ListPageContext } from "../../../lib/contexts/ListPageContext";
+import useLocalStorage from "../../../lib/hooks/useLocalStorage";
 import ActionButton from "../../elements/ActionButton";
 import Add from "../../icons/Add";
 import ListPageGridView from "./ListPageGridView";
@@ -12,13 +13,18 @@ import { View } from "./types";
 
 const ProfilePage = () => {
 	const [view, setView] = useState<View>("grid");
+
 	const [chatbots, setChatbots] = useState<ChatbotType[] | null>(null);
 	const [untouchedChatbots, setUntouchedChatbots] = useState<
 		ChatbotType[] | null
 	>(null);
-	const [favoriteNames, setFavoriteNames] = useState<string[]>([]);
 	const [error, setError] = useState<unknown | null>(null);
 	const loading = chatbots === null;
+
+	const [favoriteNames, setFavoriteNames] = useLocalStorage<string[]>(
+		"favoriteNames",
+		[]
+	);
 
 	useEffect(() => {
 		getChatbots()

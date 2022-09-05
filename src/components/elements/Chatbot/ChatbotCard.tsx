@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import classNames from "../../../lib/utils/classNames";
+import getColor from "../../../lib/utils/getColor";
 import snakeCase from "../../../lib/utils/snakeCase";
 import Card from "../Card";
 import ChatbotStar from "./ChatbotStar";
@@ -10,7 +11,7 @@ import { ChatbotProps } from "./types";
 const spring = {
 	type: "spring",
 	damping: 25,
-	stiffness: 120,
+	stiffness: 150,
 };
 
 const ChatbotCard = forwardRef<HTMLDivElement, ChatbotProps>(
@@ -54,7 +55,10 @@ const ChatbotCard = forwardRef<HTMLDivElement, ChatbotProps>(
 				</motion.button>
 				<Link to={`/chatbot/${snakeCase(name)}`}>
 					<Card className="flex h-48 w-48 cursor-pointer flex-col items-center justify-center gap-4">
-						<div className="h-12 w-12 rounded-full bg-sky-500"></div>
+						<div
+							className="h-12 w-12 rounded-full"
+							style={{ backgroundColor: getColor(chatbot.name) }}
+						></div>
 						<div className="text-center">
 							<h3 className="font-bold text-slate-600">{name}</h3>
 							<p className="text-xs font-normal leading-5 text-slate-400">
