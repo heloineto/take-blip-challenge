@@ -1,6 +1,6 @@
 # [Desafio: Lista de contatos inteligentes](https://take-blip-challenge.vercel.app/)
 
-Você precisa construir um App em React que faça listagem dos contatos inteligentes conforme o layout no Figma.
+Você precisa construir um App em React que faça listagem dos contatos inteligentes.
 
 ## Preview
 
@@ -8,7 +8,7 @@ Você precisa construir um App em React que faça listagem dos contatos intelige
   ![grid view, order chatbots](/preview/grid-order.gif)
 
 - Buscar por nome
-  ![grid view, search](/preview/3-grid-search.gif)
+  ![grid view, search](/preview/grid-search.gif)
 
 - Ver em blocos ou em lista
   ![grid view, select favorites](/preview/list-order.gif)
