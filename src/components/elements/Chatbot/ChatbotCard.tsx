@@ -43,18 +43,19 @@ const ChatbotCard = forwardRef<HTMLDivElement, ChatbotProps>(
 						event.preventDefault();
 						onChangeFavorite();
 					}}
+					data-testid="star-button"
 				>
 					<ChatbotStar favorite={favorite} />
 				</motion.button>
 				<Link to={`/chatbot/${snakeCase(name)}`}>
 					<Card
-						data-testid="chatbot-card"
 						className="flex h-48 w-48 cursor-pointer flex-col items-center justify-center gap-4"
+						data-testid="chatbot-card"
 					>
 						<div
 							className="h-12 w-12 rounded-full"
 							style={{ backgroundColor: getColor(chatbot.name) }}
-						></div>
+						/>
 						<div className="text-center">
 							<h3 className="font-bold text-slate-600">{name}</h3>
 							<p className="text-xs font-normal leading-5 text-slate-400">
