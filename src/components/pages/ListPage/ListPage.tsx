@@ -51,16 +51,6 @@ const ProfilePage = () => {
 		return <ListPageLoading />;
 	}
 
-	console.log({
-		view,
-		setView,
-		chatbots,
-		setChatbots,
-		untouchedChatbots,
-		favoriteNames,
-		setFavoriteNames,
-	});
-
 	return (
 		<ListPageContext.Provider
 			value={{
