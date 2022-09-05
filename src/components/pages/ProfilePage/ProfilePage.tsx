@@ -40,10 +40,8 @@ const ProfilePage = () => {
 		return <ProfilePageLoading />;
 	}
 
-	const value = { profile, setProfile };
-
 	return (
-		<ProfilePageContext.Provider value={value}>
+		<ProfilePageContext.Provider value={{ profile, setProfile }}>
 			<div className="flex flex-grow flex-col pt-8 pb-12">
 				<ProfilePageHeader />
 				<hr className="mt-8 mb-6 bg-slate-300" />

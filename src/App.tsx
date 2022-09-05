@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import TopBar from "./components/layout/TopBar";
+import TopBar from "./components/elements/TopBar";
 import ListPage from "./components/pages/ListPage";
 import ProfilePage from "./components/pages/ProfilePage";
 

@@ -48,5 +48,6 @@ module.exports = {
 		"react/react-in-jsx-scope": "off",
 		"no-control-regex": "off",
 		"@typescript-eslint/non-nullable-type-assertion-style": "off",
+		"@typescript-eslint/no-dynamic-delete": "off",
 	},
 };

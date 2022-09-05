@@ -14,7 +14,7 @@ const ListPageListView = () => {
 
 	return (
 		<div className="mt-16">
-			<div className="flex flex-col gap-4">
+			<ul className="flex flex-col gap-4">
 				<AnimatePresence initial={false} mode={"popLayout"}>
 					{favorites.map((chatbot) => (
 						<Chatbot
@@ -30,9 +30,9 @@ const ListPageListView = () => {
 						/>
 					))}
 				</AnimatePresence>
-			</div>
+			</ul>
 			<hr className="my-10" />
-			<div className="flex flex-col gap-4">
+			<ul className="flex flex-col gap-4">
 				<AnimatePresence initial={false} mode={"popLayout"}>
 					{rest.map((chatbot) => (
 						<Chatbot
@@ -45,7 +45,7 @@ const ListPageListView = () => {
 						/>
 					))}
 				</AnimatePresence>
-			</div>
+			</ul>
 		</div>
 	);
 };

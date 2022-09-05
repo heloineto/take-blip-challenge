@@ -51,7 +51,7 @@ const ProfilePage = () => {
 		return <ListPageLoading />;
 	}
 
-	const value = {
+	console.log({
 		view,
 		setView,
 		chatbots,
@@ -59,10 +59,20 @@ const ProfilePage = () => {
 		untouchedChatbots,
 		favoriteNames,
 		setFavoriteNames,
-	};
+	});
 
 	return (
-		<ListPageContext.Provider value={value}>
+		<ListPageContext.Provider
+			value={{
+				view,
+				setView,
+				chatbots,
+				setChatbots,
+				untouchedChatbots,
+				favoriteNames,
+				setFavoriteNames,
+			}}
+		>
 			<div className="py-8">
 				<ListPageHeader />
 				<h2 className="mt-8 text-3xl font-bold leading-10 text-[#607B99]">

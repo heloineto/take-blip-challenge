@@ -14,7 +14,7 @@ const ListPageGridView = () => {
 
 	return (
 		<div>
-			<div className="mt-4 flex flex-wrap gap-6">
+			<ul className="mt-4 flex flex-wrap gap-6">
 				<AnimatePresence initial={false} mode={"popLayout"}>
 					{favorites.map((chatbot) => (
 						<Chatbot
@@ -30,9 +30,9 @@ const ListPageGridView = () => {
 						/>
 					))}
 				</AnimatePresence>
-			</div>
+			</ul>
 			<hr className="my-10" />
-			<div className="flex flex-wrap gap-6">
+			<ul className="flex flex-wrap gap-6">
 				<AnimatePresence initial={false} mode={"popLayout"}>
 					{rest.map((chatbot) => (
 						<Chatbot
@@ -45,7 +45,7 @@ const ListPageGridView = () => {
 						/>
 					))}
 				</AnimatePresence>
-			</div>
+			</ul>
 		</div>
 	);
 };

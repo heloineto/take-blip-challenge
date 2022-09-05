@@ -32,21 +32,21 @@ const ListPageLoading = () => {
 				Favorites
 			</h2>
 			<div>
-				<div className="mt-4 flex flex-wrap gap-6">
+				<ul className="mt-4 flex flex-wrap gap-6">
 					<ChatbotLoading />
 					<ChatbotLoading />
 					<ChatbotLoading />
 					<ChatbotLoading />
 					<ChatbotLoading />
-				</div>
+				</ul>
 				<hr className="my-10" />
-				<div className="flex flex-wrap gap-6">
+				<ul className="flex flex-wrap gap-6">
 					<ChatbotLoading />
 					<ChatbotLoading />
 					<ChatbotLoading />
 					<ChatbotLoading />
 					<ChatbotLoading />
-				</div>
+				</ul>
 			</div>
 			<ActionButton className="fixed bottom-4 right-8">
 				<Add />

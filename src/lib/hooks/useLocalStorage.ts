@@ -31,7 +31,7 @@ const useLocalStorage = <T>(
 
 export default useLocalStorage;
 
-const parseJSON = <T>(value: string | null): T | undefined => {
+export const parseJSON = <T>(value: string | null): T | undefined => {
 	try {
 		return value === "undefined" ? undefined : (JSON.parse(value ?? "") as T);
 	} catch (error) {
