@@ -4,14 +4,14 @@ Você precisa construir um App em React que faça listagem dos contatos intelige
 
 ## Requisitos
 
-- A aplicação deverá cumprir todos os requisitos funcionais abaixo. Lembre-se também de seguir atentamente as diretrizes de entrega do projeto :)
-- Listagem de contatos inteligentes;
-- Adicionar um contato na listagem de favoritos;
-- Permitir alterar a forma de visualização (lista/blocos);
-- Permitir ordenação por ordem alfabética;
-- Permitir ordenação por data;
-- Permitir busca por nome dos contatos;
-- Ao clicar em um contato, deverá ser redirecionado para uma tela contendo os detalhes daquele contato que foi clicado.
+- [x] A aplicação deverá cumprir todos os requisitos funcionais abaixo. Lembre-se também de seguir atentamente as diretrizes de entrega do projeto :)
+- [x] Listagem de contatos inteligentes;
+- [x] Adicionar um contato na listagem de favoritos;
+- [x] Permitir alterar a forma de visualização (lista/blocos);
+- [x] Permitir ordenação por ordem alfabética;
+- [x] Permitir ordenação por data;
+- [x] Permitir busca por nome dos contatos;
+- [x] Ao clicar em um contato, deverá ser redirecionado para uma tela contendo os detalhes daquele contato que foi clicado.
 
 ## Diretrizes de entrega
 
