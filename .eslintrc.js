@@ -5,11 +5,11 @@ module.exports = {
 	},
 	plugins: ["@typescript-eslint"],
 	extends: [
-		// "eslint:recommended",
+		"eslint:recommended",
 		"plugin:react/recommended",
-		// "plugin:@typescript-eslint/recommended",
-		// "plugin:@typescript-eslint/recommended-requiring-type-checking",
-		// "plugin:@typescript-eslint/strict",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/recommended-requiring-type-checking",
+		"plugin:@typescript-eslint/strict",
 		"prettier",
 	],
 	ignorePatterns: [
@@ -20,6 +20,8 @@ module.exports = {
 		"!.env.example",
 		"*.html",
 		"tailwind.config.js",
+		"postcss.config.js",
+		".eslintrc.js",
 		"package-lock.json",
 	],
 	parser: "@typescript-eslint/parser",
@@ -44,5 +46,7 @@ module.exports = {
 		 */
 		"react/jsx-uses-react": "off",
 		"react/react-in-jsx-scope": "off",
+		"no-control-regex": "off",
+		"@typescript-eslint/non-nullable-type-assertion-style": "off",
 	},
 };

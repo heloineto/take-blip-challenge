@@ -1,9 +1,7 @@
 import type { ComponentProps } from "react";
 import classNames from "../../lib/utils/classNames";
 
-interface Props extends ComponentProps<"div"> {}
-
-const Card = ({ className, ...restProps }: Props) => {
+const Card = ({ className, ...restProps }: ComponentProps<"div">) => {
 	return (
 		<div
 			className={classNames(

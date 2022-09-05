@@ -1,8 +1,6 @@
 import type { ComponentProps } from "react";
 
-interface Props extends ComponentProps<"svg"> {}
-
-const MessageBubble = (props: Props) => {
+const MessageBubble = (props: ComponentProps<"svg">) => {
 	return (
 		<svg
 			width={28}

@@ -1,10 +1,10 @@
 import { createContext, Dispatch, SetStateAction, useContext } from "react";
 import { ChatbotProfile } from "../../@types/chatbots";
 
-type ProfilePageContextType = {
+interface ProfilePageContextType {
 	profile: ChatbotProfile;
 	setProfile: Dispatch<SetStateAction<ChatbotProfile | null>>;
-};
+}
 
 export const ProfilePageContext = createContext<
 	ProfilePageContextType | undefined

@@ -1,8 +1,6 @@
 import type { ComponentProps } from "react";
 
-interface Props extends ComponentProps<"svg"> {}
-
-const User = (props: Props) => {
+const User = (props: ComponentProps<"svg">) => {
 	return (
 		<svg
 			width={40}

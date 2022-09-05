@@ -2,7 +2,7 @@ import { createContext, Dispatch, SetStateAction, useContext } from "react";
 import { ChatbotType } from "../../@types/chatbots";
 import { View } from "../../components/pages/ListPage/types";
 
-type ListPageContextType = {
+interface ListPageContextType {
 	view: View;
 	setView: Dispatch<SetStateAction<View>>;
 	chatbots: ChatbotType[];
@@ -10,7 +10,7 @@ type ListPageContextType = {
 	untouchedChatbots: ChatbotType[] | null;
 	favoriteNames: string[];
 	setFavoriteNames: Dispatch<SetStateAction<string[]>>;
-};
+}
 
 export const ListPageContext = createContext<ListPageContextType | undefined>(
 	undefined

@@ -10,7 +10,6 @@ interface Props extends ComponentProps<"div"> {
 const ChatbotLoading = ({
 	favorite = false,
 	className,
-	id,
 	...restProps
 }: Props) => {
 	return (

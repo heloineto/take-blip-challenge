@@ -1,9 +1,10 @@
 import type { ComponentProps } from "react";
 import classNames from "../../lib/utils/classNames";
 
-interface Props extends ComponentProps<"button"> {}
-
-const ActionButton = ({ className, ...restProps }: Props) => {
+const ActionButton = ({
+	className,
+	...restProps
+}: ComponentProps<"button">) => {
 	return (
 		<button
 			type="button"

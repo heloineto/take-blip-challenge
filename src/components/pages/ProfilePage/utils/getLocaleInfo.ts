@@ -1,7 +1,7 @@
-type LocaleInfo = {
+interface LocaleInfo {
 	region: string;
 	timezone: string;
-};
+}
 
 const localeInfoArray: Record<string, LocaleInfo | undefined> = {
 	"pt-BR": {

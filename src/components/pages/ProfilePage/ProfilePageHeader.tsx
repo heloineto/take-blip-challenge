@@ -1,9 +1,7 @@
 import { useProfilePage } from "../../../lib/contexts/ProfilePageContext";
 import formatDate from "../../../lib/utils/formatDate";
 
-interface Props {}
-
-const ProfilePageHeader = (props: Props) => {
+const ProfilePageHeader = () => {
 	const { profile } = useProfilePage();
 
 	return (

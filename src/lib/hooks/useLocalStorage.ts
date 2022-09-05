@@ -33,7 +33,7 @@ export default useLocalStorage;
 
 const parseJSON = <T>(value: string | null): T | undefined => {
 	try {
-		return value === "undefined" ? undefined : JSON.parse(value ?? "");
+		return value === "undefined" ? undefined : (JSON.parse(value ?? "") as T);
 	} catch (error) {
 		if (process.env.NODE_ENV === "development") console.error(error);
 		return undefined;

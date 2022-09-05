@@ -16,14 +16,7 @@ const spring = {
 
 const ChatbotCard = forwardRef<HTMLDivElement, ChatbotProps>(
 	function ChatbotCard(
-		{
-			chatbot,
-			favorite = false,
-			className,
-			onChangeFavorite,
-			id,
-			...restProps
-		},
+		{ chatbot, favorite = false, className, onChangeFavorite, ...restProps },
 		ref
 	) {
 		const { name, type } = chatbot;

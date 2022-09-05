@@ -1,8 +1,8 @@
 import { ChatbotType } from "../../../../@types/chatbots";
 
 const divideChatbots = (chatbots: ChatbotType[], favoriteNames: string[]) => {
-	let favorites = [];
-	let rest = [];
+	const favorites = [];
+	const rest = [];
 
 	for (const chatbot of chatbots) {
 		if (favoriteNames.includes(chatbot.name)) {

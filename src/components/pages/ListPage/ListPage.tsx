@@ -53,7 +53,7 @@ const ProfilePage = () => {
 
 	return (
 		<ListPageContext.Provider value={value}>
-			<div className="my-8">
+			<div className="py-8">
 				<ListPageHeader />
 				<h2 className="mt-8 text-3xl font-bold leading-10 text-[#607B99]">
 					Favorites

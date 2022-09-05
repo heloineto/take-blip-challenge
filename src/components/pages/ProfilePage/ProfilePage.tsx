@@ -7,9 +7,7 @@ import ProfilePageCards from "./ProfilePageCards";
 import ProfilePageHeader from "./ProfilePageHeader";
 import ProfilePageLoading from "./ProfilePageLoading";
 
-interface Props {}
-
-const ProfilePage = (props: Props) => {
+const ProfilePage = () => {
 	const { shortName } = useParams();
 	const [profile, setProfile] = useState<ChatbotProfile | null>(null);
 	const [error, setError] = useState<unknown | null>(null);

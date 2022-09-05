@@ -1,8 +1,6 @@
 import type { ComponentProps } from "react";
 
-interface Props extends ComponentProps<"svg"> {}
-
-const OrganizeList = (props: Props) => {
+const OrganizeList = (props: ComponentProps<"svg">) => {
 	return (
 		<svg
 			width={32}

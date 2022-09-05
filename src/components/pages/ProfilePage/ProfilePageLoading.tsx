@@ -5,9 +5,7 @@ import MessageReceived from "../../icons/MessageReceived";
 import MessageSent from "../../icons/MessageSent";
 import User from "../../icons/User";
 
-interface Props {}
-
-const ProfilePageLoading = (props: Props) => {
+const ProfilePageLoading = () => {
 	return (
 		<div className="flex flex-grow flex-col pt-8 pb-12">
 			<div className="flex w-full items-center justify-between">
